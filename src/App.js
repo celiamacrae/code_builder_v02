@@ -10,14 +10,10 @@ class App extends React.Component{
 
     this.state = {
       c1 : {
-        color:"grey",
-        dashwidth:"4",
         canConnect : false,
         connected: false,
       },
       c2 : {
-        color:"grey",
-        dashwidth:"4",
         canConnect: false,
         connected: false,
       },
@@ -215,11 +211,11 @@ class App extends React.Component{
             </Card>
           </Board>
 
-          <Connection id='c1' makeConnection={this.makeConnection} strokeColor={this.state.c1.color} dashwidth={this.state.c1.dashwidth}/>
+          <Connection id='c1' makeConnection={this.makeConnection} connected={this.state.c1.connected}/>
      
           <Board id='board-2' className='board' onChangeBoard={this.onChangeBoard}/>
   
-          <Connection id='c2' makeConnection={this.makeConnection} strokeColor={this.state.c2.color} dashwidth={this.state.c2.dashwidth} onClick={this.makeConnection}/>
+          <Connection id='c2' makeConnection={this.makeConnection} connected={this.state.c2.connected}/>
      
           <Board id='board-3' className='board' onChangeBoard={this.onChangeBoard}/>
   
@@ -230,7 +226,7 @@ class App extends React.Component{
             <Card id='timer-card' className='card' draggable='true'>
               <Timer input={this.state.timer.input} secondsInput={this.secondsInput} startTimer={this.startTimer} inputHandler={this.inputHandler} seconds={this.state.seconds} stopTimer={this.stopTimer} resetTimer={this.resetTimer} triggerState={this.state.triggerState}/>
             </Card>
-            
+
             <Card id='debug-card' className='card' draggable='true'>
               <DebugOutput input={this.state.debug.input}/>
             </Card>
