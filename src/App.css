@@ -1,38 +1,133 @@
-.App {
-  text-align: center;
+.board{
+  border-style: dashed;
+  border-color: grey ;
+  border-radius: 10px;
+  height: 200px;
+  width: 200px;
+  /* margin: 20px; */
+
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+#code-builder{
+  display: flex;
+  flex-direction: row;
+  margin: 20px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.options-board{
+  display: flex;
+  flex-direction: row;
+  height: 250px; 
+  width: 800px;
+  margin: 20px;
+  border-style: dashed;
+  border-color: grey ;
+  border-radius: 10px;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.card{
+  height: 195px;
+  width: 195px;
+  background-color: #CDEBF9;
+  border: solid;
+  border-radius: 10px;
+}
+
+.box{
+  height: 200px;
+  width: 200px;
   display: flex;
   flex-direction: column;
-  align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  align-items: center;
 }
 
-.App-link {
-  color: #61dafb;
+/*TIMER */
+
+input {
+  font-size: 24px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+/* #control{
+  display: flex;
+  flex-direction: column;
+} */
+
+#timer_buttons{
+  display: flex;
+  flex-direction: column;
+}
+
+
+
+
+
+
+
+
+
+
+/*FOR TRIGGER SLIDER BUTTON*/
+
+/* The switch - the box around the slider */
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 90px;
+  height: 51px;
+}
+
+/* Hide default HTML checkbox */
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+/* The slider */
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 39px;
+  width: 39px;
+  left: 6px;
+  bottom: 6px;
+  background-color: white;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+input:checked + .slider {
+  background-color: #2196F3;
+}
+
+input:focus + .slider {
+  box-shadow: 0 0 1px #2196F3;
+}
+
+input:checked + .slider:before {
+  -webkit-transform: translateX(39px);
+  -ms-transform: translateX(39px);
+  transform: translateX(39px);
+}
+
+/* Rounded sliders */
+.slider.round {
+  border-radius: 51px;
+}
+
+.slider.round:before {
+  border-radius: 50%;
 }
