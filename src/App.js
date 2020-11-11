@@ -99,13 +99,13 @@ class App extends React.Component{
     if(this.state.position[1] !== null && this.state.position[2] !== null){
       await this.setState({c1 : {...this.state.c1, canConnect: true}})
     }else{
-      await this.setState({c1 : {...this.state.c1, canConnect: false}})
+      await this.setState({c1 : {...this.state.c1, canConnect: false, connected: false}})
     }
 
     if(this.state.position[2] !== null && this.state.position[3] !== null){
       await this.setState({c2 : {...this.state.c2, canConnect: true}})
     }else{
-      await this.setState({c2 : {...this.state.c2, canConnect: false}})
+      await this.setState({c2 : {...this.state.c2, canConnect: false, connected: false}})
     }
 
     this.handleConnection()
@@ -205,7 +205,7 @@ class App extends React.Component{
     return (
       <div className="App">
         <div id='code-builder'>
-          
+
           <Board id='board-1' className='board' onChangeBoard={this.onChangeBoard}>
             <Card id='trigger-card' className='card' draggable='false'>
               <Trigger output={this.state.trigger.output} handleToggle={this.handleToggle}/>
