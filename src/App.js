@@ -99,13 +99,13 @@ class App extends React.Component{
     if(this.state.position[1] !== null && this.state.position[2] !== null){
       await this.setState({c1 : {...this.state.c1, canConnect: true}})
     }else{
-      await this.setState({c1 : {...this.state.c1, canConnect: false, connected: false, color:"grey", dashwidth:"4"}})
+      await this.setState({c1 : {...this.state.c1, canConnect: false}})
     }
 
     if(this.state.position[2] !== null && this.state.position[3] !== null){
       await this.setState({c2 : {...this.state.c2, canConnect: true}})
     }else{
-      await this.setState({c2 : {...this.state.c2, canConnect: false, connected: false, color:"grey", dashwidth:"4"}})
+      await this.setState({c2 : {...this.state.c2, canConnect: false}})
     }
 
     this.handleConnection()
@@ -114,16 +114,16 @@ class App extends React.Component{
   async makeConnection(e){
     if(e.target.id === 'c1'){
       if(this.state.c1.canConnect === true && this.state.c1.connected === false){
-        await this.setState({c1: {...this.state.c1, connected: true, color:"black", dashwidth:"0"}})
+        await this.setState({c1: {...this.state.c1, connected: true}})
       }else{
-        await this.setState({c1: {...this.state.c1, connected: false, color:"grey", dashwidth:"4"}})
+        await this.setState({c1: {...this.state.c1, connected: false}})
       }
     }
     if(e.target.id === 'c2'){
       if(this.state.c1.canConnect === true && this.state.c2.connected === false){
-        await this.setState({c2: {...this.state.c2, connected: true, color:"black", dashwidth:"0"}})
+        await this.setState({c2: {...this.state.c2, connected: true}})
       }else{
-        await this.setState({c2: {...this.state.c2, connected: false, color:"grey", dashwidth:"4"}})
+        await this.setState({c2: {...this.state.c2, connected: false}})
       }
     }
     this.handleConnection()
@@ -205,6 +205,7 @@ class App extends React.Component{
     return (
       <div className="App">
         <div id='code-builder'>
+          
           <Board id='board-1' className='board' onChangeBoard={this.onChangeBoard}>
             <Card id='trigger-card' className='card' draggable='false'>
               <Trigger output={this.state.trigger.output} handleToggle={this.handleToggle}/>
@@ -230,12 +231,8 @@ class App extends React.Component{
             <Card id='debug-card' className='card' draggable='true'>
               <DebugOutput input={this.state.debug.input}/>
             </Card>
-  
-            
-  
           </Board>
         </div>
-  
   
       </div>
     );
