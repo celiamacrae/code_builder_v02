@@ -17,11 +17,13 @@
 .options-board{
   display: flex;
   flex-direction: row;
-  height: 250px; 
-  width: 800px;
-  margin: 20px;
-  border-style: dashed;
-  border-color: grey ;
+  justify-content: space-evenly;
+  height: 205px; 
+  width: 450px;
+  margin: 100px 20px;
+  padding: 20px;
+  border-style: solid;
+  border-color: black;
   border-radius: 10px;
 }
 
@@ -57,7 +59,6 @@ input {
   display: flex;
   flex-direction: column;
 }
-
 
 
 

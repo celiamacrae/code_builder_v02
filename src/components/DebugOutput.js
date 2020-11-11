@@ -3,23 +3,11 @@ import React from 'react'
 const DebugOutput = props => {
     return (
         <div className='box'>
-            <p>True</p>
+            {props.input === null ? 
+                (<p>Debug Output</p>) : 
+            (props.input ? (<p>True</p>) : (<p>False</p>))}
         </div>  
     )
-    // return (
-    //     props.hasDebug ? (
-    //         <div className='box-container'>
-    //             <ConnectLine color={props.c3 ? 'green' : 'red'}/>
-    //             <div className='box'>
-    //         {props.hasTimer ? 
-    //             (props.timerState === true ? (<h1>True </h1>) : (<h1>False</h1>)
-    //         ) :
-    //         props.triggerState === true ? (<h1>True</h1>) : (<h1>False</h1>)
-    //         }
-    //     </div>
-    //         </div>
-    //      ) : (<p>Debug Output</p>)
-    // )
 }
 
 export default DebugOutput

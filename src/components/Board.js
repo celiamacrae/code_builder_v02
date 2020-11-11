@@ -7,8 +7,7 @@ function Board(props){
         const card = document.getElementById(card_id)
         card.style.display = 'block'
         e.target.appendChild(card)
-
-        // props.checkConnection(document.getElementById('board-1').children)
+        
         props.onChangeBoard(e.target.id, card_id)
     }
 

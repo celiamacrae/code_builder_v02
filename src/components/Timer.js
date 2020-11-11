@@ -10,9 +10,9 @@ const Timer = props => {
                     <input ref={props.secondsInput} type="number"  max={10} min={0} placeholder={10}  name="seconds"  onChange={props.inputHandler} />
                 </div>
                 <div id='timer_buttons'>
-                    <button onClick={props.startTimer} className="start">start</button>
-                    <button onClick={props.stopTimer}  className="stop">stop</button>
-                    <button onClick={props.resetTimer} className="reset">reset</button>
+                    <button disabled={props.input !== true} onClick={props.startTimer} className="start">start</button>
+                    <button disabled={props.input !== true} onClick={props.stopTimer}  className="stop">stop</button>
+                    <button disabled={props.input !== true} onClick={props.resetTimer} className="reset">reset</button>
                 </div>
             </div>
             {seconds < 10 ? (
