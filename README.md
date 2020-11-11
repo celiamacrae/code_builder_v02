@@ -10,7 +10,7 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 - `npm start`
 
 ## Features of this app
-- Add/ Remove Timer button gives you the option to add a timer to your code builder.
+- Drag and drop code building components.
 - Trigger block: Momentary output that sets the output of the block to true while selected.
 - Timer block: When the input becomes true, the timer starts. When timer expires, output is set to true for one second then set back to false. Configurable 1-10 seconds. 
 - “Debug” block: displays the input value.
