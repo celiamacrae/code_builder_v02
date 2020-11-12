@@ -145,6 +145,9 @@ class App extends React.Component{
     if(this.state.position[3] === 'timer-card'){
       await this.setState({timer : {...this.state.timer, input: null}})
     }
+    if(this.state.position[3] === 'debug-card' && this.state.position[2] === null){
+      await this.setState({debug: {... this.state.debug, input: null}})
+    }
     if(this.state.position[2] === 'timer-card' && this.state.position[3] === 'debug-card' && this.state.c2.connected){
       await this.setState({debug : {...this.state.debug, input: this.state.timer.output}})
     }
